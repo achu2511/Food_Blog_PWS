@@ -1,6 +1,7 @@
-FROM node:slim
-WORKDIR /app
-COPY  . /app/
+FROM node:19.5.0-alpine
+WORKDIR /usr/src/app
+COPY package*.json ./
 RUN npm install
-EXPOSE 3000
-CMD node app.js
+COPY . .
+EXPOSE 8080
+CMD ["node","app.js"]
