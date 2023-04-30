@@ -1,0 +1,35 @@
+<!-- login.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+</head>
+<body>
+    <div class="row justify-content-center log-div ">
+
+        <% if(infoSubmitObj != '') { %>
+          <div class="col-8 alert alert-success " role="alert">
+            <%= infoSubmitObj %>
+          </div>
+        <% } %>
+      
+        <% if(infoErrorsObj != '') { %>
+          <div class="col-8 alert alert-danger" role="alert">
+            <%= infoErrorsObj[0].message %>
+          </div>
+        <% } %>
+    <div class="bgl bg-light">
+        <h1 class="log bg-light">Login Page</h1>
+        <form action="/login" class="txt-log bg-light"  enctype="multipart/form-data" method="POST">
+            <label class="sub-log bg-light">Email:</label>
+            <input type="email" name="email" class="ip" required>
+            <br>
+            <label class="sub-log bg-light">Password:</label>
+            <input type="password" name="password" class="ipo" required>
+            <br>
+            <button type="submit" class="sub">Login</button>
+        </form>
+        <p class="bg-light dont">Don't have an account? <a href="/signup" class="bg-light">Sign up</a></p>
+    </div>
+</body>
+</html>

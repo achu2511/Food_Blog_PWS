@@ -1,0 +1,39 @@
+
+<!-- signup.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Signup Page</title>
+</head>
+<body>
+    <div class="row justify-content-center">
+
+        <% if(infoSubmitObj != '') { %>
+          <div class="col-8 alert alert-success" role="alert">
+            <%= infoSubmitObj %>
+          </div>
+        <% } %>
+      
+        <% if(infoErrorsObj != '') { %>
+          <div class="col-8 alert alert-danger" role="alert">
+            <%= infoErrorsObj[0].message %>
+          </div>
+        <% } %> 
+	<div class="bgl pol bg-light">
+		<h1 class="log yu bg-light">Signup Page</h1>
+		<form action="/signup" class="txt-log bg-light yodha" enctype="multipart/form-data"  method="POST">
+			<label class="sub-log bg-light pl">Name:</label>
+			<input class="ip" type="text" name="username" required>
+			<br>
+			<label class="sub-log bg-light pl">Email:</label>
+			<input type="email" class="ema" name="email" required>
+			<br>
+			<label class="sub-log bg-light pl">Password:</label>
+			<input class="ipo" type="password" name="password" required>
+			<br>
+			<button type="submit" class="sub">Sign up</button>
+		</form>
+		<p class="bg-light dont tyu">Already have an account? <a href="/login">Login</a></p>
+	</div>
+</body>
+</html>
